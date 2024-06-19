@@ -1,11 +1,13 @@
 const { Events, ChannelType } = require('discord.js');
 const lark = require('../utils/lark.js');
 require('dotenv').config();
+const servers = require('../../utils/servers');
 
 module.exports = {
     name: Events.ThreadCreate,
     async execute(thread) {
-        if (thread.parent.type != ChannelType.GuildForum || thread.parentId != process.env.VOTE_SUGGESTION_ID) return;
+        const guildId = thread.guildId;
+        if (thread.parent.type != ChannelType.GuildForum || thread.parentId != servers[guildId].vote) return;
 
         const message = await thread.fetchStarterMessage();
         const embed = await message.embeds[0];

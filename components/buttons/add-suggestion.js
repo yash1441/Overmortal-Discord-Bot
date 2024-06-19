@@ -1,5 +1,6 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, EmbedBuilder, ButtonBuilder, ButtonStyle, bold, inlineCode, codeBlock, channelMention, userMention } = require('discord.js');
 require('dotenv').config();
+const servers = require('../../utils/servers');
 
 module.exports = {
     cooldown: 10,
@@ -9,7 +10,9 @@ module.exports = {
     async execute(interaction) {
         await interaction.deferReply({ ephemeral: true });
 
-        const channel = await interaction.client.channels.fetch(process.env.VOTE_SUGGESTION_ID);
+        const guildId = interaction.guildId;
+
+        const channel = await interaction.client.channels.fetch(servers[guildId].vote);
         const availableTags = channel.availableTags;
 
         const selectMenu = new StringSelectMenuBuilder()
@@ -60,7 +63,7 @@ module.exports = {
 
             await modalReply.deleteReply();
 
-            await interaction.editReply({ content: 'Your suggestion has been submitted. Please wait for an admin to approve or deny it. If approved, it should be visible in ' + channelMention(process.env.VOTE_SUGGESTION_ID) + ' shortly.\n\n' + bold(modal.data.title) + '\n' + codeBlock((modalReply.fields.getTextInputValue('description').length < 2000) ? modalReply.fields.getTextInputValue('description') : (modalReply.fields.getTextInputValue('description').slice(0, 1000) + '...') )  });
+            await interaction.editReply({ content: 'Your suggestion has been submitted. Please wait for an admin to approve or deny it. If approved, it should be visible in ' + channelMention(servers[guildId].vote) + ' shortly.\n\n' + bold(modal.data.title) + '\n' + codeBlock((modalReply.fields.getTextInputValue('description').length < 2000) ? modalReply.fields.getTextInputValue('description') : (modalReply.fields.getTextInputValue('description').slice(0, 1000) + '...') )  });
 
             collector.stop();
 
@@ -80,6 +83,7 @@ async function sendSuggestionAdmin(interaction, category) {
     const user = interaction.user;
     const title = interaction.fields.getTextInputValue('title');
     const description = interaction.fields.getTextInputValue('description');
+    const guildId = interaction.guildId;
 
     const embed = new EmbedBuilder()
         .setTitle(title)
@@ -101,6 +105,6 @@ async function sendSuggestionAdmin(interaction, category) {
     
     const row = new ActionRowBuilder().addComponents(approveButton, denyButton);
 
-    const channel = await interaction.client.channels.fetch(process.env.DECIDE_SUGGESTION_ID);
+    const channel = await interaction.client.channels.fetch(servers[guildId].decide);
     await channel.send({ embeds: [embed], components: [row] });
 }

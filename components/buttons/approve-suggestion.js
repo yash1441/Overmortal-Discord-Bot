@@ -1,5 +1,6 @@
 const { EmbedBuilder, userMention, hyperlink, bold } = require('discord.js');
 require('dotenv').config();
+const servers = require('../../utils/servers');
 
 module.exports = {
     cooldown: 10,
@@ -22,7 +23,8 @@ module.exports = {
 };
 
 async function sendSuggestionVote(interaction, embedData) {
-    const channel = await interaction.client.channels.fetch(process.env.VOTE_SUGGESTION_ID);
+    const guildId = interaction.guildId;
+    const channel = await interaction.client.channels.fetch(servers[guildId].vote);
     const availableTags = channel.availableTags;
     let tagId;
 

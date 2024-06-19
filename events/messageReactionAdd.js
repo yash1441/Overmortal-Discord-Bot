@@ -1,6 +1,7 @@
 const { Events } = require('discord.js');
 const lark = require('../utils/lark.js');
 require('dotenv').config();
+const servers = require('../../utils/servers');
 
 module.exports = {
     name: Events.MessageReactionAdd,
@@ -13,7 +14,9 @@ module.exports = {
             }
         }
 
-        if (user.id == process.env.BOT_ID || (reaction.emoji.name != '✅' && reaction.emoji.name != '❌') || reaction.message.channel.parentId != process.env.VOTE_SUGGESTION_ID) return;
+        const guildId = reaction.message.guildId;
+
+        if (user.id == process.env.BOT_ID || (reaction.emoji.name != '✅' && reaction.emoji.name != '❌') || reaction.message.channel.parentId != servers[guildId].vote) return;
 
         const acceptCount = reaction.message.reactions.cache.get('✅').count - 1;
         const rejectCount = reaction.message.reactions.cache.get('❌').count - 1;
