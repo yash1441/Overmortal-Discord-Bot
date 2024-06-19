@@ -1,7 +1,7 @@
 const { Events } = require('discord.js');
 const lark = require('../utils/lark.js');
 require('dotenv').config();
-const servers = require('../../utils/servers');
+const servers = require('../utils/servers');
 
 module.exports = {
     name: Events.MessageReactionAdd,
