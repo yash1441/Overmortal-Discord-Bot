@@ -17,8 +17,8 @@ module.exports = {
         const tag = thread.parent.availableTags.find(tag => tag.id == thread.appliedTags[0]);
 
         const data = {
-            "Suggestion Title": thread.name,
-            "Suggestion Details": embed.data.description,
+            "Title": thread.name,
+            "Details": embed.data.description,
             "Category": tag.name,
             "✅": 0,
             "❌": 0,
