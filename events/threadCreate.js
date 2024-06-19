@@ -26,7 +26,7 @@ module.exports = {
             "❌": 0,
             "Discord ID": embed.data.footer.text,
             "Discord Name": embed.data.author.name,
-            "Server": guildId
+            "Server ID": guildId
         };
 
         const success = await lark.createRecord(process.env.FEEDBACK_POOL_BASE, process.env.SUGGESTIONS_TABLE, { fields: data })

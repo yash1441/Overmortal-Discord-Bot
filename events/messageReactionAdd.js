@@ -21,7 +21,7 @@ module.exports = {
         const acceptCount = reaction.message.reactions.cache.get('✅').count - 1;
         const rejectCount = reaction.message.reactions.cache.get('❌').count - 1;
 
-        const response = await lark.listRecords(process.env.FEEDBACK_POOL_BASE, process.env.SUGGESTIONS_TABLE, { filter: 'AND(CurrentValue.[Title] = "' + reaction.message.channel.name + '", CurrentValue.[Discord Name] = "' + reaction.message.embeds[0].data.author.name + '", CurrentValue.[Server] = "' + guildId + '")' });
+        const response = await lark.listRecords(process.env.FEEDBACK_POOL_BASE, process.env.SUGGESTIONS_TABLE, { filter: 'AND(CurrentValue.[Title] = "' + reaction.message.channel.name + '", CurrentValue.[Discord Name] = "' + reaction.message.embeds[0].data.author.name + '", CurrentValue.[Server ID] = "' + guildId + '")' });
 
         if (!response) return console.warn('Could not fetch Suggestion Title: ' + reaction.message.channel.name);
 
