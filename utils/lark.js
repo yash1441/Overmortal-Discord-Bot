@@ -74,6 +74,7 @@ async function createRecord(app_token, table_id, body, parameters = null, id = p
     if (response && response.data.code === 0) {
         return response.data.data;
     } else {
+        console.log(response.data);
         return false;
     }
 }
