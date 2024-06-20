@@ -58,5 +58,13 @@
     "deny": {
         "en-US": "Deny",
         "zh-TW": " 已選擇 "
+    },
+    "vote": {
+        "en-US": "Vote",
+        "zh-TW": "投票"
+    },
+    "decision": {
+        "en-US": "Decision",
+        "zh-TW": "決定"
     }
 }
