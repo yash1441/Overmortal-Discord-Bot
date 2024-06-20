@@ -89,6 +89,7 @@ async function sendSuggestionAdmin(interaction, category) {
     const user = interaction.user;
     const title = interaction.fields.getTextInputValue('title');
     const description = interaction.fields.getTextInputValue('description');
+    const rid = interaction.fields.getTextInputValue('rid');
     const guildId = interaction.guildId;
 
     const embed = new EmbedBuilder()
@@ -96,7 +97,7 @@ async function sendSuggestionAdmin(interaction, category) {
         .setDescription(description)
         .addFields({ name: localization.category[interaction.locale] ?? localization.category["en-US"], value: category, inline: true })
         .setAuthor({ name: user.username, iconURL: user.displayAvatarURL() })
-        .setFooter({ text: user.id })
+        .setFooter({ text: user.id + '-' + rid })
         .setColor(process.env.EMBED_COLOR);
 
     const approveButton = new ButtonBuilder()
