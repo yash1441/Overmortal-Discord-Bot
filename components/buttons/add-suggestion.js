@@ -95,7 +95,7 @@ async function sendSuggestionAdmin(interaction, category) {
     const embed = new EmbedBuilder()
         .setTitle(title)
         .setDescription(description)
-        .addFields({ name: localization.category[interaction.locale] ?? localization.category["en-US"], value: category, inline: true })
+        .addFields({ name: localization.category[interaction.locale] ?? localization.category["en-US"], value: category, inline: true }, { name: "RID", value: rid, inline: true })
         .setAuthor({ name: user.username, iconURL: user.displayAvatarURL() })
         .setFooter({ text: user.id + '-' + rid })
         .setColor(process.env.EMBED_COLOR);
