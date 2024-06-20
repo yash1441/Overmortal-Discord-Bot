@@ -32,8 +32,7 @@ module.exports = {
             "RID": rid
         };
 
-        const success = await lark.createRecord(process.env.FEEDBACK_POOL_BASE, process.env.SUGGESTIONS_TABLE, { fields: data })
-
+        const success = await lark.createRecord(process.env.FEEDBACK_POOL_BASE, process.env.SUGGESTIONS_TABLE, { fields: data });
         if (!success) console.log("Failed to create record in lark");
     }
 };
