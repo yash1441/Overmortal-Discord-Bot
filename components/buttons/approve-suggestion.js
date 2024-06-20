@@ -13,11 +13,11 @@ module.exports = {
 
         const embed = interaction.message.embeds[0];
 
-        const approvedEmbed = EmbedBuilder.from(embed).setColor(process.env.EMBED_COLOR_APPROVED).addFields({ name: localized.decision[interaction.locale] ?? localized.decision["en-US"], value: userMention(interaction.user.id), inline: true });
+        const approvedEmbed = EmbedBuilder.from(embed).setColor(process.env.EMBED_COLOR_APPROVED).addFields({ name: localization.decision[interaction.locale] ?? localization.decision["en-US"], value: userMention(interaction.user.id), inline: true });
 
         const message = await sendSuggestionVote(interaction, approvedEmbed);
 
-        approvedEmbed.addFields({ name: '\u200B', value: hyperlink(bold(localized.vote[interaction.locale] ?? localized.vote["en-US"]), message.url), inline: false });
+        approvedEmbed.addFields({ name: '\u200B', value: hyperlink(bold(localization.vote[interaction.locale] ?? localization.vote["en-US"]), message.url), inline: false });
 
         await interaction.message.edit({ embeds: [approvedEmbed], components: [] }).then(() => interaction.deleteReply());
     },

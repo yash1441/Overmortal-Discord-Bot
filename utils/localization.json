@@ -53,11 +53,11 @@
     },
     "approve": {
         "en-US": "Approve",
-        "zh-TW": " 已選擇 "
+        "zh-TW": "拒絕"
     },
     "deny": {
         "en-US": "Deny",
-        "zh-TW": " 已選擇 "
+        "zh-TW": "拒絕"
     },
     "vote": {
         "en-US": "Vote",
