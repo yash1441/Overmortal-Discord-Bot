@@ -1,0 +1,62 @@
+{
+    "category": {
+        "en-US": "Category",
+        "zh-TW":" 已選擇 "
+    },
+    "suggestion_category": {
+        "en-US": "Suggestion Category",
+        "zh-TW": "建議類別"
+    },
+    "select_suggestion_category": {
+        "en-US": "Select a suggestion category",
+        "zh-TW": "選擇一個建議分類"
+    },
+    "selection_expired": {
+        "en-US": "The selection has expired.",
+        "zh-TW": "所選內容已過期"
+    },
+    "title": {
+        "en-US": "Title",
+        "zh-TW": "標題"
+    },
+    "give_title": {
+        "en-US": "Give your suggestion a short title",
+        "zh-TW": "為您的建議擬一個小標題"
+    },
+    "rid": {
+        "en-US": "RID",
+        "zh-TW": "RID"
+    },
+    "give_rid": {
+        "en-US": "Put your in-game ID here",
+        "zh-TW": "在此輸入您的遊戲ID"
+    },
+    "description": {
+        "en-US": "Description",
+        "zh-TW": "描述"
+    },
+    "give_description": {
+        "en-US": "Explain your suggestion in detail here",
+        "zh-TW": "在此詳細描述您的建議"
+    },
+    "form_expired": {
+        "en-US": "The form has expired.",
+        "zh-TW": "表單已過期"
+    },
+    "selected": {
+        "en-US": " has selected ",
+        "zh-TW": " 已選擇 "
+    },
+    "suggestion_submitted": {
+        "en-US": "Your suggestion has been submitted. Please wait for an admin to approve or deny it. If approved, it should be visible in {{voteSuggestionChannel}} shortly.",
+        "zh-TW": "您的建議已提交。請等待管理員批准或拒絕。如果被批准，將很快會在 {{voteSuggestionChannel}} 中顯示"
+    },
+    "approve": {
+        "en-US": "Approve",
+        "zh-TW": " 已選擇 "
+    },
+    "deny": {
+        "en-US": "Deny",
+        "zh-TW": " 已選擇 "
+    }
+}
