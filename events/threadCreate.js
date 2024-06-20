@@ -11,8 +11,8 @@ module.exports = {
 
         const message = await thread.fetchStarterMessage();
         const embed = await message.embeds[0];
-        const discordId = embed.data.footer.text.split('-')[0];
-        const rid = embed.data.footer.text.split('-')[0];
+        const discordId = embed.data.footer.text.split('-', 2)[0];
+        const rid = embed.data.footer.text.split('-', 2)[1];
 
         if (!embed) return;
 
