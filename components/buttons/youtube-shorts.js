@@ -1,4 +1,4 @@
-const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, bold, codeBlock } = require('discord.js');
+const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, bold, inlineCode } = require('discord.js');
 require('dotenv').config();
 const lark = require('../../utils/lark');
 const servers = require('../../utils/servers');
@@ -81,7 +81,7 @@ module.exports = {
             submissionData.theme = botReply.modalReply.fields.getTextInputValue('theme');
 
             await interaction.editReply({
-                content: (localization.content_submitted[interaction.locale] ?? localization.content_submitted["en-US"]) + '\n\n' + bold(submissionData.topic) + '\n' + codeBlock(submissionData.link) + '\n' + codeBlock(submissionData.theme),
+                content: (localization.content_submitted[interaction.locale] ?? localization.content_submitted["en-US"]) + '\nTopic ' + inlineCode(submissionData.topic) + '\nLink ' + inlineCode(submissionData.link) + '\nTheme ' + inlineCode(submissionData.theme),
                 components: []
             });
 
