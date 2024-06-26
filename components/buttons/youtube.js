@@ -1,4 +1,4 @@
-const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, bold, codeBlock } = require('discord.js');
+const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, bold, inlineCode } = require('discord.js');
 require('dotenv').config();
 const lark = require('../../utils/lark');
 const servers = require('../../utils/servers');
