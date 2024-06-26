@@ -66,5 +66,49 @@
     "decision": {
         "en-US": "Decision",
         "zh-TW": "決定"
+    },
+    "platform": {
+        "en-US": "Platform",
+        "zh-TW": "--"
+    },
+    "select_platform": {
+        "en-US": "Select your platform",
+        "zh-TW": "--"
+    },
+    "select_submission_platform": {
+        "en-US": "Where do you publish the content?",
+        "zh-TW": "--"
+    },
+    "topic": {
+        "en-US": "Topic",
+        "zh-TW": "--"
+    },
+    "select_topic": {
+        "en-US": "Select a topic",
+        "zh-TW": "--"
+    },
+    "select_submission_topic": {
+        "en-US": "What topic your content is about?",
+        "zh-TW": "--"
+    },
+    "meme": {
+        "en-US": "Meme",
+        "zh-TW": "--"
+    },
+    "other": {
+        "en-US": "Other",
+        "zh-TW": "--"
+    },
+    "channel_link": {
+        "en-US": "Your {{platform}} Channel Link",
+        "zh-TW": "--"
+    },
+    "video_theme": {
+        "en-US": "Video Theme",
+        "zh-TW": "--"
+    },
+    "content_submitted": {
+        "en-US": "Your content has been submitted.",
+        "zh-TW": "--"
     }
 }
