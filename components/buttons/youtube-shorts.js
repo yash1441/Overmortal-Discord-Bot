@@ -110,7 +110,7 @@ module.exports = {
                 }
             );
 
-            console.log(success);
+            if (!success) return console.warn('Could not create record for ', submissionData.link);
         });
 
         collector.on('end', (collected, reason) => {

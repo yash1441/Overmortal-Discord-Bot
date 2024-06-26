@@ -110,7 +110,7 @@ module.exports = {
                 }
             );
 
-            console.log(success);
+            if (!success) return console.warn('Could not add ' + reaction.emoji.name + ' to ' + reaction.message.id);
         });
 
         collector.on('end', (collected, reason) => {
