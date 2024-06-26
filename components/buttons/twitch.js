@@ -5,7 +5,7 @@ const servers = require('../../utils/servers');
 const localization = require('../../utils/localization');
 
 module.exports = {
-    cooldown: 10,
+    cooldown: 60,
     data: {
         name: 'twitch',
     },
