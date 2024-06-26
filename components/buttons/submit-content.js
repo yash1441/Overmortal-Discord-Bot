@@ -40,8 +40,8 @@ module.exports = {
 
         const submissionModal = new ModalBuilder().setCustomId('submission-modal');
 
-        const submissionModalLink = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('link').setLabel((localized.channel_link[interaction.locale] ?? localized.channel_link["en-US"]).replace('{{paltform}}', submissionData.platform)).setStyle(TextInputStyle.Short));
-        const submissionModalTheme = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('theme').setLabel(localized.video_theme[interaction.locale] ?? localized.video_theme["en-US"]).setStyle(TextInputStyle.Short));
+        const submissionModalLink = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('link').setLabel((localization.channel_link[interaction.locale] ?? localization.channel_link["en-US"]).replace('{{paltform}}', submissionData.platform)).setStyle(TextInputStyle.Short));
+        const submissionModalTheme = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('theme').setLabel(localization.video_theme[interaction.locale] ?? localization.video_theme["en-US"]).setStyle(TextInputStyle.Short));
 
         submissionModal.addComponents(submissionModalLink, submissionModalTheme);
 
@@ -89,7 +89,7 @@ module.exports = {
         platformCollector.on('end', (collected, reason) => {
             if (reason === 'time' && !collected.size) {
                 interaction.editReply({
-                    content: localized.selection_expired[interaction.locale] ?? localized.selection_expired["en-US"], components: []
+                    content: localization.selection_expired[interaction.locale] ?? localization.selection_expired["en-US"], components: []
                 });
                 setTimeout(() => interaction.deleteReply(), 10_000);
             };
@@ -110,7 +110,7 @@ module.exports = {
                 filter: (modalInteraction) => modalInteraction.user.id === topicInteraction.user.id
             }).catch(() => {
                 interaction.editReply({
-                    content: localized.form_expired[interaction.locale] ?? localized.form_expired["en-US"], components: []
+                    content: localization.form_expired[interaction.locale] ?? localization.form_expired["en-US"], components: []
                 });
                 setTimeout(() => interaction.deleteReply(), 10_000);
             });
@@ -120,7 +120,7 @@ module.exports = {
 
         topicCollector.on('end', (collected, reason) => {
             if (reason === 'time' && !collected.size) {
-                interaction.editReply({ content: localized.selection_expired[interaction.locale] ?? localized.selection_expired["en-US"], components: [] });
+                interaction.editReply({ content: localization.selection_expired[interaction.locale] ?? localization.selection_expired["en-US"], components: [] });
                 setTimeout(() => interaction.deleteReply(), 10_000);
             };
         });
@@ -132,7 +132,7 @@ module.exports = {
         await botReply.modalReply.deleteReply();
 
         await interaction.editReply({
-            content: (localized.content_submitted[interaction.locale] ?? localized.content_submitted["en-US"]) + '\n\n' + bold(submissionModal.data.title) + '\n' + codeBlock(botReply.modalReply.fields.getTextInputValue('link') + '\n' + codeBlock(botReply.modalReply.fields.getTextInputValue('theme')))
+            content: (localization.content_submitted[interaction.locale] ?? localization.content_submitted["en-US"]) + '\n\n' + bold(submissionModal.data.title) + '\n' + codeBlock(botReply.modalReply.fields.getTextInputValue('link') + '\n' + codeBlock(botReply.modalReply.fields.getTextInputValue('theme')))
         });
     },
 };
