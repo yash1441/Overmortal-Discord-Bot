@@ -69,66 +69,66 @@
     },
     "platform": {
         "en-US": "Platform",
-        "zh-TW": "--"
+        "zh-TW": "社群平台"
     },
     "select_platform": {
         "en-US": "Select your platform",
-        "zh-TW": "--"
+        "zh-TW": "選擇平台"
     },
     "select_submission_platform": {
         "en-US": "Where do you publish the content?",
-        "zh-TW": "--"
+        "zh-TW": "您在哪個平台發佈作品？"
     },
     "topic": {
         "en-US": "Topic",
-        "zh-TW": "--"
+        "zh-TW": "話題"
     },
     "select_topic": {
         "en-US": "Select a topic",
-        "zh-TW": "--"
+        "zh-TW": "選擇話題"
     },
     "select_submission_topic": {
         "en-US": "What topic your content is about?",
-        "zh-TW": "--"
+        "zh-TW": "您的作品是關於什麼話題？"
     },
     "meme": {
         "en-US": "Meme",
-        "zh-TW": "--"
+        "zh-TW": "迷因"
     },
     "other": {
         "en-US": "Other",
-        "zh-TW": "--"
+        "zh-TW": "其他"
     },
     "video_link": {
         "en-US": "Your {{platform}} Video Link",
-        "zh-TW": "--"
+        "zh-TW": "您的{{platform}}作品連結"
     },
     "video_theme": {
         "en-US": "Video Theme",
-        "zh-TW": "--"
+        "zh-TW": "影片主題"
     },
     "channel_link": {
         "en-US": "Your {{platform}} Channel Link",
-        "zh-TW": "--"
+        "zh-TW": "您的{{platform}}頻道連結"
     },
     "channel_subscribers": {
         "en-US": "How many subscribers do you have?",
-        "zh-TW": "--"
+        "zh-TW": "您的粉絲數量是？"
     },
     "content_submitted": {
         "en-US": "Your content has been submitted.",
-        "zh-TW": "--"
+        "zh-TW": "您的作品已提交"
     },
     "creator_application": {
         "en-US": "Creator Application",
-        "zh-TW": "--"
+        "zh-TW": "創作者申請"
     },
     "application_submitted": {
         "en-US": "Your application has been submitted.",
-        "zh-TW": "--"
+        "zh-TW": "您的申請已提交"
     },
     "brief_introduction": {
         "en-US": "Brief Introduction",
-        "zh-TW": "--"
+        "zh-TW": "頻道/作品簡介"
     }
 }
