@@ -99,7 +99,7 @@
         "en-US": "Other",
         "zh-TW": "--"
     },
-    "channel_link": {
+    "video_link": {
         "en-US": "Your {{platform}} Video Link",
         "zh-TW": "--"
     },
@@ -107,8 +107,24 @@
         "en-US": "Video Theme",
         "zh-TW": "--"
     },
+    "channel_link": {
+        "en-US": "Your {{platform}} Channel Link",
+        "zh-TW": "--"
+    },
+    "channel_subscribers": {
+        "en-US": "How many subscribers do you have?",
+        "zh-TW": "--"
+    },
     "content_submitted": {
         "en-US": "Your content has been submitted.",
+        "zh-TW": "--"
+    },
+    "creator_application": {
+        "en-US": "Creator Application",
+        "zh-TW": "--"
+    },
+    "application_submitted": {
+        "en-US": "Your application has been submitted.",
         "zh-TW": "--"
     }
 }

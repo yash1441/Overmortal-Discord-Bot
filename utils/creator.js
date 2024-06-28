@@ -1,5 +1,6 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, bold, inlineCode } = require('discord.js');
 require('dotenv').config();
+
 const lark = require('./lark');
 const localization = require('./localization');
 
@@ -17,7 +18,7 @@ async function contentSubmission(interaction, platform) {
 
     const submissionModal = new ModalBuilder().setCustomId('submission-modal');
 
-    const submissionModalLink = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('link').setLabel(localized.channel_link[interaction.locale] ?? localized.channel_link["en-US"]).setStyle(TextInputStyle.Short));
+    const submissionModalLink = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('link').setLabel(localized.video_link[interaction.locale] ?? localized.video_link["en-US"]).setStyle(TextInputStyle.Short));
     const submissionModalTheme = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('theme').setLabel(localization.video_theme[interaction.locale] ?? localization.video_theme["en-US"]).setStyle(TextInputStyle.Short));
 
     submissionModal.addComponents(submissionModalLink, submissionModalTheme);
@@ -104,7 +105,7 @@ async function contentSubmission(interaction, platform) {
             }
         );
 
-        if (!success) return console.warn('Could not add ' + reaction.emoji.name + ' to ' + reaction.message.id);
+        if (!success) return console.warn('Could not create record.');
     });
 
     collector.on('end', (collected, reason) => {
