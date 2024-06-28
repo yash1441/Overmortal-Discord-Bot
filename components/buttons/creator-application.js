@@ -19,7 +19,6 @@ module.exports = {
             region: servers[interaction.guildId].region
         };
 
-        const localized = JSON.parse(JSON.stringify(localization).replaceAll('{{platform}}', creatorData.platform));
         const creatorModal = new ModalBuilder().setCustomId('creator-modal');
 
         const platformSelectMenu = new StringSelectMenuBuilder()
