@@ -126,5 +126,9 @@
     "application_submitted": {
         "en-US": "Your application has been submitted.",
         "zh-TW": "--"
+    },
+    "brief_introduction": {
+        "en-US": "Brief Introduction",
+        "zh-TW": "--"
     }
 }

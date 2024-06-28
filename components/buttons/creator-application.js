@@ -59,8 +59,9 @@ module.exports = {
 
             const creatorModalChannel = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('channel').setLabel(JSON.parse(JSON.stringify(localization).replaceAll('{{platform}}', creatorData.platform)).channel_link[interaction.locale] ?? JSON.parse(JSON.stringify(localization).replaceAll('{{platform}}', creatorData.platform)).channel_link["en-US"]).setStyle(TextInputStyle.Short));
             const creatorModalSubs = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('subs').setLabel(localization.channel_subscribers[interaction.locale] ?? localization.channel_subscribers["en-US"]).setStyle(TextInputStyle.Short));
+            const creatorModalIntro = new ActionRowBuilder().addComponents(new TextInputBuilder().setCustomId('intro').setLabel(localization.brief_introduction[interaction.locale] ?? localization.brief_introduction["en-US"]).setStyle(TextInputStyle.Paragraph));
 
-            creatorModal.addComponents(creatorModalChannel, creatorModalSubs);
+            creatorModal.addComponents(creatorModalChannel, creatorModalSubs, creatorModalIntro);
             creatorModal.setTitle(creatorData.platform + ' Creator');
 
             await platformInteraction.showModal(creatorModal);
@@ -85,6 +86,7 @@ module.exports = {
 
             creatorData.channel = modalReply.fields.getTextInputValue('channel');
             creatorData.subs = modalReply.fields.getTextInputValue('subs');
+            creatorData.intro = modalReply.fields.getTextInputValue('intro');
 
             await interaction.editReply({
                 content: (localization.application_submitted[interaction.locale] ?? localization.application_submitted["en-US"]) + '\nPlatform ' + inlineCode(creatorData.platform) + '\nChannel ' + inlineCode(creatorData.channel) + '\nSubscribers ' + inlineCode(creatorData.subs),
@@ -112,7 +114,8 @@ module.exports = {
                             text: creatorData.channel,
                         },
                         "Region": creatorData.region,
-                        "Subscribers": parseInt(creatorData.subs) ?? 0
+                        "Subscribers": parseInt(creatorData.subs) ?? 0,
+                        "Introduction": creatorData.intro
                     }
                 }
             );
