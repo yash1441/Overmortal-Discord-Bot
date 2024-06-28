@@ -1,8 +1,7 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, ComponentType, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle, bold, inlineCode } = require('discord.js');
 require('dotenv').config();
-const lark = require('lark');
-const servers = require('servers');
-const localization = require('localization');
+const lark = require('./lark');
+const localization = require('./localization');
 
 async function contentSubmission(interaction, platform) {
     await interaction.deferReply({ ephemeral: true });
