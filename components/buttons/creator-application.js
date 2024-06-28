@@ -111,7 +111,8 @@ module.exports = {
                             link: creatorData.channel,
                             text: creatorData.channel,
                         },
-                        "Region": creatorData.region
+                        "Region": creatorData.region,
+                        "Subscribers": parseInt(creatorData.subs) ?? 0
                     }
                 }
             );
