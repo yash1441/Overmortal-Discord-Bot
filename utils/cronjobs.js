@@ -33,7 +33,9 @@ async function dailyCron(client) {
                 process.env.APPLICATION_TABLE,
                 record.record_id,
                 {
-                    "Status": "Role Given",
+                    fields: {
+                        "Status": "Role Given",
+                    }
                 }
             );
 
