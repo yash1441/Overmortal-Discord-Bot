@@ -1,4 +1,5 @@
 const { Events, ActivityType } = require('discord.js');
+const cronjobs = require('../utils/cronjobs');
 
 module.exports = {
 	name: Events.ClientReady,
@@ -15,5 +16,7 @@ module.exports = {
 			],
 			status: 'online'
 		});
+
+		cronjobs.dailyCron(client);
 	},
 };
