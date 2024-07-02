@@ -24,9 +24,9 @@ async function dailyCron(client) {
                 .then(async (member) => {
                     await member.roles.add(role)
                         .then(console.log('Added creator role to ', record.fields['Discord Name']))
-                        .catch(console.log('Failed to add creator role to ', record.fields['Discord Name']))
+                        .catch(console.error)
                 })
-                .catch(console.log('Failed to fetch member ', record.fields['Discord Name']));
+                .catch(console.error);
 
             const success = await lark.updateRecord(
                 process.env.CREATOR_BASE,
