@@ -4,7 +4,7 @@ const lark = require('./lark')
 const servers = require('./servers.json');
 
 async function dailyCron(client) {
-    // cron.schedule("0 0 * * *", async () => {
+    cron.schedule("0 0 * * *", async () => {
         console.log("Running daily cron job");
 
         const records = await lark.listRecords(
@@ -42,12 +42,11 @@ async function dailyCron(client) {
             if (!success) return console.log('Failed to update record')
         }
 
-        console.log(records);
-    // },
-    //     {
-    //         timezone: "Asia/Singapore",
-    //     }
-    // );
+    },
+        {
+            timezone: "Asia/Singapore",
+        }
+    );
 }
 
 module.exports = { dailyCron };
