@@ -1,5 +1,5 @@
-const { Events, ActivityType } = require('discord.js');
-const cronjobs = require('../utils/cronjobs');
+const { Events, ActivityType } = require("discord.js");
+const cronjobs = require("../utils/cronjobs");
 
 module.exports = {
 	name: Events.ClientReady,
@@ -9,12 +9,12 @@ module.exports = {
 		client.user.setPresence({
 			activities: [
 				{
-					name: 'Overmortal',
+					name: "Overmortal",
 					type: ActivityType.Playing,
-					state: "Overmortal"
+					state: "Overmortal",
 				},
 			],
-			status: 'online'
+			status: "online",
 		});
 
 		cronjobs.dailyCron(client);
