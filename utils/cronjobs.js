@@ -3,11 +3,11 @@ require("dotenv").config();
 const lark = require("./lark");
 const servers = require("./servers.json");
 
-async function dailyCron(client) {
+async function giveCreatorRoles(client) {
 	cron.schedule(
 		"0 0 * * *",
 		async () => {
-			console.log("Running daily cron job");
+			console.log("Running daily cron job - Creator Roles");
 
 			const records = await lark.listRecords(
 				process.env.CREATOR_BASE,
@@ -15,8 +15,7 @@ async function dailyCron(client) {
 				{ filter: `CurrentValue.[Status] = "Accepted"` }
 			);
 
-			if (!records || !records.total)
-				return console.log("0 records modified");
+			if (!records || !records.total) return;
 
 			for (const record of records.items) {
 				const guildInRegion = Object.entries(servers).find(
@@ -61,4 +60,4 @@ async function dailyCron(client) {
 	);
 }
 
-module.exports = { dailyCron };
+module.exports = { giveCreatorRoles };

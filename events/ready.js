@@ -17,6 +17,6 @@ module.exports = {
 			status: "online",
 		});
 
-		cronjobs.dailyCron(client);
+		cronjobs.giveCreatorRoles(client);
 	},
 };
