@@ -14,12 +14,11 @@ module.exports = {
 			process.env.CREATOR_BASE,
 			process.env.CREATOR_BASE,
 			{
-				filter:
-					'CurrentValue.[Discord ID] = "' +
-					interaction.user.id +
-					'")',
+				filter: `CurrentValue.[Discord ID] = "${interaction.user.id}"`,
 			}
 		);
+
+        console.log(response);
 
 		if (!response || !response.total) {
 			return interaction.editReply({
