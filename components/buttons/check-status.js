@@ -12,7 +12,7 @@ module.exports = {
 
 		const response = await lark.listRecords(
 			process.env.CREATOR_BASE,
-			process.env.CREATOR_BASE,
+			process.env.CREATOR_TABLE,
 			{
 				filter: `CurrentValue.[Discord ID] = "${interaction.user.id}"`,
 			}
