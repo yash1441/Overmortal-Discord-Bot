@@ -61,8 +61,6 @@ async function listRecords(
 		console.error(error)
 	);
 
-	console.log(response.data);
-
 	if (response && response.data.code === 0) {
 		return response.data.data;
 	} else {
