@@ -31,9 +31,9 @@ module.exports = {
 			avatar: interaction.user.displayAvatarURL(),
 			region: response.items[0].fields.Region,
 			benefitLevel: response.items[0].fields["Benefit Level"],
-			totalViews: response.items[0].fields["Total Views"],
-			totalVideos: response.items[0].fields["Total Videos"],
-			totalBP: response.items[0].fields["Total BP"],
+			totalViews: response.items[0].fields["Total Views"].toString(),
+			totalVideos: response.items[0].fields["Total Videos"].toString(),
+			totalBP: response.items[0].fields["Total BP"].toString(),
 		};
 
 		const embed = new EmbedBuilder()
