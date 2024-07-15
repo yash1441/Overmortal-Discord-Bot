@@ -33,8 +33,7 @@ async function listRecords(
 	table_id,
 	parameters = null,
 	id = process.env.FEISHU_ID,
-	secret = process.env.FEISHU_SECRET,
-	log = false
+	secret = process.env.FEISHU_SECRET
 ) {
 	const tenantAccessToken = await authorize(id, secret);
 
@@ -62,7 +61,7 @@ async function listRecords(
 		console.error(error)
 	);
 
-	if (log) console.log(response.data);
+	console.log(response.data);
 
 	if (response && response.data.code === 0) {
 		return response.data.data;

@@ -15,8 +15,7 @@ module.exports = {
 			process.env.CREATOR_BASE,
 			{
 				filter: `CurrentValue.[Discord ID] = "${interaction.user.id}"`,
-			},
-            log = true
+			}
 		);
 
 		if (!response || !response.total) {
