@@ -33,7 +33,7 @@ module.exports = {
 			"✅": 0,
 			"❌": 0,
 			"Discord ID": discordId,
-			"Discord Name": embed.data.author.name,
+			//"Discord Name": embed.data.author.name,
 			"Server ID": guildId,
 			RID: rid,
 		};

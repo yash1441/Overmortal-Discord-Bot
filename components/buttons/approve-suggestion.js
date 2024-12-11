@@ -58,10 +58,10 @@ async function sendSuggestionVote(interaction, embedData) {
 	}
 
 	const embed = new EmbedBuilder()
-		.setAuthor({
-			name: embedData.data.author.name,
-			iconURL: embedData.data.author.icon_url,
-		})
+		// .setAuthor({
+		// 	name: embedData.data.author.name,
+		// 	iconURL: embedData.data.author.icon_url,
+		// })
 		.setDescription(embedData.data.description)
 		.setColor(process.env.EMBED_COLOR)
 		.setFooter({ text: embedData.data.footer.text });
