@@ -34,9 +34,9 @@ module.exports = {
 			{
 				filter:
 					'AND(CurrentValue.[Title] = "' +
-					reaction.message.channel.name +
+					reaction.message.channel.name /*+
 					'", CurrentValue.[Discord Name] = "' +
-					reaction.message.embeds[0].data.author.name +
+					reaction.message.embeds[0].data.author.name */+
 					'", CurrentValue.[Server ID] = "' +
 					guildId +
 					'")',
