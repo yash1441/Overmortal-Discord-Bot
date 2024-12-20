@@ -135,7 +135,7 @@ module.exports = {
 
 			const modalReply = await selectMenuInteraction
 				.awaitModalSubmit({
-					time: 3_00_000,
+					time: 12_00_000,
 					filter: (modalInteraction) =>
 						modalInteraction.user.id ===
 						selectMenuInteraction.user.id,
