@@ -66,8 +66,7 @@ module.exports = {
 			new TextInputBuilder()
 				.setCustomId("title")
 				.setLabel(
-					localized.title[interaction.locale] ??
-						localized.title["en-US"]
+					localized.title[interaction.locale] ?? localized.title["en-US"]
 				)
 				.setStyle(TextInputStyle.Short)
 				.setPlaceholder(
@@ -78,13 +77,10 @@ module.exports = {
 		const modalRow2 = new ActionRowBuilder().addComponents(
 			new TextInputBuilder()
 				.setCustomId("rid")
-				.setLabel(
-					localized.rid[interaction.locale] ?? localized.rid["en-US"]
-				)
+				.setLabel(localized.rid[interaction.locale] ?? localized.rid["en-US"])
 				.setStyle(TextInputStyle.Short)
 				.setPlaceholder(
-					localized.give_rid[interaction.locale] ??
-						localized.give_rid["en-US"]
+					localized.give_rid[interaction.locale] ?? localized.give_rid["en-US"]
 				)
 		);
 		const modalRow3 = new ActionRowBuilder().addComponents(
@@ -137,8 +133,7 @@ module.exports = {
 				.awaitModalSubmit({
 					time: 12_00_000,
 					filter: (modalInteraction) =>
-						modalInteraction.user.id ===
-						selectMenuInteraction.user.id,
+						modalInteraction.user.id === selectMenuInteraction.user.id,
 				})
 				.catch(() => {
 					interaction.editReply({
@@ -168,8 +163,7 @@ module.exports = {
 					bold(modal.data.title) +
 					"\n" +
 					codeBlock(
-						modalReply.fields.getTextInputValue("description")
-							.length < 2000
+						modalReply.fields.getTextInputValue("description").length < 2000
 							? modalReply.fields.getTextInputValue("description")
 							: modalReply.fields
 									.getTextInputValue("description")
@@ -223,8 +217,7 @@ async function sendSuggestionAdmin(interaction, category) {
 	const approveButton = new ButtonBuilder()
 		.setCustomId("approve-suggestion")
 		.setLabel(
-			localization.approve[interaction.locale] ??
-				localization.approve["en-US"]
+			localization.approve[interaction.locale] ?? localization.approve["en-US"]
 		)
 		.setStyle(ButtonStyle.Success);
 
