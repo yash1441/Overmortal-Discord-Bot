@@ -38,15 +38,16 @@ module.exports = {
 			RID: rid,
 		};
 
-		const success = await lark.createRecord(
+		const base =
 			guildId === "1215600132003725353"
 				? servers[guildId].base
-				: process.env.FEEDBACK_POOL_BASE,
+				: process.env.FEEDBACK_POOL_BASE;
+		const table =
 			guildId === "1215600132003725353"
 				? servers[guildId].discord_feedback
-				: process.env.SUGGESTIONS_TABLE,
-			{ fields: data }
-		);
+				: process.env.SUGGESTIONS_TABLE;
+
+		const success = await lark.createRecord(base, table, { fields: data });
 		if (!success) console.log("Failed to create record in lark");
 	},
 };
