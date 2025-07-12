@@ -39,8 +39,12 @@ module.exports = {
 		};
 
 		const success = await lark.createRecord(
-			process.env.FEEDBACK_POOL_BASE,
-			process.env.SUGGESTIONS_TABLE,
+			guildId === "1215600132003725353"
+				? servers[guildId].base
+				: process.env.FEEDBACK_POOL_BASE,
+			guildId === "1215600132003725353"
+				? servers[guildId].discord_feedback
+				: process.env.SUGGESTIONS_TABLE,
 			{ fields: data }
 		);
 		if (!success) console.log("Failed to create record in lark");
